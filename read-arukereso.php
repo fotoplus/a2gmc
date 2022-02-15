@@ -12,7 +12,9 @@ curl_setopt($ch, CURLOPT_HEADER, 0);
 $result = curl_exec($ch);
 curl_close($ch);
 
-print_r($result); // prints the contents of the collected file before writing..
+#print_r($result); 
 
+
+#-> $result
 
 ?>
