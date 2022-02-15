@@ -48,7 +48,7 @@ $array = process_csv($file);
 
 $file = "arukereso.csv";
 
-$rows = array_map(function($v){return str_getcsv($v, ";");}, $result);
+$rows = array_map(function($v){return str_getcsv($v, ";");}, explode("\n", $result));
 #$rows = array_map(function($v){return str_getcsv($v, ";");}, file($file,FILE_SKIP_EMPTY_LINES));
 $header = array_shift($rows);
 $csv = array();
