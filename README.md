@@ -1,4 +1,4 @@
-# Árukereső ➡️ Google Merchant center
+# Árukereső (CSV) ➡️ Google Merchant Center (XML)
 
 **A2GMC** arukereso-2-google-merchant-center
 
