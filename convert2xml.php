@@ -40,7 +40,7 @@ $xml_end = '
 ';
 
 file_put_contents($xml_file, $xml_start, FILE_APPEND | LOCK_EX);
-
+$i=0;
 foreach ($csv as $item) {
 
 	if (!empty($item)) :
@@ -82,7 +82,7 @@ foreach ($csv as $item) {
 
 	file_put_contents($xml_file, $to_file, FILE_APPEND | LOCK_EX);
 	#fwrite($file, $to_file); 
-
+	$i++;
 	endif;
 
 }
@@ -91,6 +91,8 @@ file_put_contents($xml_file, $xml_end, FILE_APPEND | LOCK_EX);
 
 unset($item);
 unset($csv);
+
+echo 'Termékek: '.$i . chr(13);
 
 /*
 ?>
