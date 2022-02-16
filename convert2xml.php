@@ -20,7 +20,8 @@ if(file_exists($xml_file)):
 	unlink($xml_file);
 endif;
 
-$file = fopen($xml_file,"w"); 
+#$file = fopen($xml_file,"w"); 
+#fclose($file); 
 
 foreach ($csv as $item) {
 
@@ -62,13 +63,13 @@ foreach ($csv as $item) {
 '
 	;	
 
-	file_put_contents($file, $to_file, FILE_APPEND | LOCK_EX);
+	file_put_contents($xml_file, $to_file, FILE_APPEND | LOCK_EX);
 	#fwrite($file, $to_file); 
 
 	endif;
 
 }
-fclose($file); 
+
 unset($item);
 unset($csv);
 
