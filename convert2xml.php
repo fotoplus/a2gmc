@@ -16,6 +16,11 @@
  * 
  */
 
+if(file_exists($xml_file)):
+	unlink($xml_file);
+endif;
+
+$file = fopen($xml_file,"w"); 
 
 foreach ($csv as $item) {
 
@@ -31,7 +36,8 @@ foreach ($csv as $item) {
 		
 		$g_mpn 											= substr($item['code'], 4);
 
-		print('
+		$to_file =
+'
 
 			<item>
 
@@ -53,11 +59,16 @@ foreach ($csv as $item) {
 				
 			</item>
 
-		');
+'
+	;	
+
+	file_put_contents($file, $to_file, FILE_APPEND | LOCK_EX);
+	#fwrite($file, $to_file); 
+
 	endif;
 
 }
-
+fclose($file); 
 unset($item);
 unset($csv);
 

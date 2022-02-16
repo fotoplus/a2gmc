@@ -16,3 +16,4 @@ remotefile='arukereso-csv.xml'
 with open(localfile, "rb") as file:
     ftp.storbinary('STOR %s' % remotefile, file)
 ftp.quit()
+
