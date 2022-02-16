@@ -2,7 +2,7 @@ import sys
 import pysftp
 
 sys.path.append('/etc/credentials/sftp-google-merchant-center.py') 
-import SFTP_server, SFTP_port, SFTP_user, SFTP_password
+
 
 srv = pysftp.Connection(host=SFTP_server, username=SFTP_user,
 password=SFTP_port,port=SFTP_port,log="./temp/pysftp.log")
