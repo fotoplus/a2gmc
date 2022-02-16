@@ -42,6 +42,8 @@ $xml_end = '
 
 ';
 
+file_put_contents($xml_start);
+
 foreach ($csv as $item) {
 
 	if (!empty($item)) :
@@ -88,6 +90,8 @@ foreach ($csv as $item) {
 	endif;
 
 }
+
+file_put_contents($xml_end);
 
 unset($item);
 unset($csv);
