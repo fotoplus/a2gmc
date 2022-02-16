@@ -42,7 +42,7 @@ $xml_end = '
 
 ';
 
-file_put_contents($xml_start);
+file_put_contents($xml_file, $xml_start, FILE_APPEND | LOCK_EX);
 
 foreach ($csv as $item) {
 
@@ -91,7 +91,7 @@ foreach ($csv as $item) {
 
 }
 
-file_put_contents($xml_end);
+file_put_contents($xml_file, $xml_end, FILE_APPEND | LOCK_EX);
 
 unset($item);
 unset($csv);
