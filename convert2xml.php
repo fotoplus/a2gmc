@@ -24,15 +24,12 @@ endif;
 #fclose($file); 
 
 
-$xml_start = '
-
-<?xml version="1.0"?>
+$xml_start = '<?xml version="1.0"?>
 <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
 	<channel>
 		<title>FOTOPLUS</title>
 		<link>http://www.fotoplus.hu</link>
 		<description>FOTOPLUS webáruház</description>
-
 ';
 
 $xml_end = '
@@ -60,10 +57,9 @@ foreach ($csv as $item) {
 
 		$to_file =
 '
-
 			<item>
 
-				<g:id>'.$item['identifier'].'</g:id>
+				<g:id>'.$item['code'].'</g:id>
 				<g:title>'.$item['name'].'</g:title>
 				<g:description>'.$item['description'].'</g:description>
 				<g:link>'.$item['product_url'].'</g:link>
