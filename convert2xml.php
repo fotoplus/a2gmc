@@ -1,5 +1,15 @@
 <?php
 
+
+$search['delivery_time']     = array('Rendelésre','1');
+$replace['delivery_time']    = array('out_of_stock','in_stock');
+str_replace($search['delivery_time'], $replace['delivery_time'], $csv);
+
+$search['delivery_cost']     = array('ingyen');
+$replace['delivery_cost']    = array('0');
+str_replace($search['delivery_cost'], $replace['delivery_cost'], $csv);
+
+/*
 ?>
 <?xml version="1.0"?>
 <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
@@ -8,34 +18,29 @@
 		<link>http://www.fotoplus.hu</link>
 		<description>FOTOPLUS webáruház</description>
 		
-		<!-- First example shows what attributes are required and recommended for items that are not in the apparel category -->
 		<item>
-			<!-- The following attributes are always required -->
-			<g:id>TV_123456</g:id>
-			<g:title>LG 22LB4510 - 22" LED TV - 1080p (FullHD)</g:title>
-			<g:description>Attractively styled and boasting stunning picture quality, the LG 22LB4510 - 22&quot; LED TV - 1080p (FullHD) is an excellent television/monitor. The LG 22LB4510 - 22&quot; LED TV - 1080p (FullHD) sports a widescreen 1080p panel, perfect for watching movies in their original format, whilst also providing plenty of working space for your other applications.</g:description>
-			<g:link>http://www.example.com/electronics/tv/22LB4510.html</g:link>
-			<g:image_link>http://images.example.com/TV_123456.png</g:image_link>
-			<g:condition>used</g:condition>
-			<g:availability>in stock</g:availability>
-			<g:price>159.00 USD</g:price>
+
+			<g:id>740-VOA080AE</g:id>
+			<g:title>Nikon Z9</g:title>
+			<g:description>Professzionális tükör nélküli full-frame fényképezőgép</g:description>
+			<g:link>https://fotoplus.hu/hu/termekeink/fenykepezogepek/cserelheto-objektives-tukor-nelkuli/nikon-z9-vaz</g:link>
+			<g:image_link>https://fotoplus.hu/public/upload/fenykepezogepek/tukor_nelkuli/nikon/_large/740-z9body-07.jpg</g:image_link>
+			<g:condition>new</g:condition>
+			<g:availability>out_of_stock</g:availability>
+			<g:price>2199900 HUF</g:price>
 			<g:shipping>
-				<g:country>US</g:country>
-				<g:service>Standard</g:service>
-				<g:price>14.95 USD</g:price>
+				<g:country>HU</g:country>
+				<g:price>0 HUF</g:price>
 			</g:shipping>
+
+			<g:brand>Nikon</g:brand>
+			<g:mpn>VOA080AE</g:mpn>
 			
-			<!-- 2 of the following 3 attributes are required fot this item according to the Unique Product Identifier Rules -->
-			<g:brand>LG</g:brand>
-			<g:mpn>22LB4510/US</g:mpn>
-			
-			<!-- The following attributes are not required for this item, but supplying them is recommended -->
-			<g:google_product_category>Electronics > Video > Televisions > Flat Panel Televisions</g:google_product_category>
-			<g:product_type>Consumer Electronics &gt; TVs &gt; Flat Panel TVs</g:product_type>
 		</item>
 	</channel>
 </rss>
-<?php
 
+<?php
+*/
 
 ?>
