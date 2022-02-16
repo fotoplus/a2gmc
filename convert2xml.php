@@ -1,6 +1,63 @@
 <?php
+/**
+ * identifier			> g:id
+ * code						> g:mpn (Előtag nélkül)
+ * category
+ * manufacturer		> g:brand
+ * name						> g:title
+ * description		> g:description
+ * net_price
+ * price					> g:price
+ * image_url			> g:image_link
+ * product_url		> g:link
+ * delivery_time	> g:availability
+ * delivery_cost	> g:shipping - g:price
+ 
+ * 
+ */
 
 
+foreach ($csv as $item) {
+	$search['delivery_time']    = array('Rendelésre','1');
+	$replace['delivery_time']   = array('out_of_stock','in_stock');
+	$g_availability							= str_replace($search['delivery_time'], $replace['delivery_time'], $item['delivery_time']);
+
+	$search['delivery_cost']		= array('ingyen');
+	$replace['delivery_cost']   = array('0');
+	$g_delivery_cost						= str_replace($search['delivery_cost'], $replace['delivery_cost'], $item['delivery_cost']);
+	
+	$g_mpn 											= substr($item['code'], 4);
+
+	print('
+
+	<item>
+
+	<g:id>'.$item['identifier'].'</g:id>
+	<g:title>'.$item['name'].'</g:title>
+	<g:description>'.$item['description'].'</g:description>
+	<g:link>'.$item['product_url'].'</g:link>
+	<g:image_link>'.$item['image_url'].'</g:image_link>
+	<g:condition>new</g:condition>
+	<g:availability>'.$g_availability.'</g:availability>
+	<g:price>'.$item['price'].' HUF</g:price>
+	<g:shipping>
+		<g:country>HU</g:country>
+		<g:price>'.$g_delivery_cost.' HUF</g:price>
+	</g:shipping>
+
+	<g:brand>'.$item['manufacturer'].'</g:brand>
+	<g:mpn>'.$g_mpn.'</g:mpn>
+	
+</item>
+
+');
+
+}
+
+unset($item);
+unset($csv);
+
+/*
 $search['delivery_time']     = array('Rendelésre','1');
 $replace['delivery_time']    = array('out_of_stock','in_stock');
 str_replace($search['delivery_time'], $replace['delivery_time'], $csv);
@@ -8,7 +65,7 @@ str_replace($search['delivery_time'], $replace['delivery_time'], $csv);
 $search['delivery_cost']     = array('ingyen');
 $replace['delivery_cost']    = array('0');
 str_replace($search['delivery_cost'], $replace['delivery_cost'], $csv);
-
+*/
 /*
 ?>
 <?xml version="1.0"?>

@@ -22,7 +22,8 @@ $csv = array();
 foreach ($rows as $row) {
     $csv[] = array_combine($header, $row);
 }
+unset($row);
 
-print_r($csv);
+#print_r($csv);
 
 ?>
