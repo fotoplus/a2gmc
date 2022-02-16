@@ -30,25 +30,25 @@ foreach ($csv as $item) {
 
 	print('
 
-	<item>
+		<item>
 
-	<g:id>'.$item['identifier'].'</g:id>
-	<g:title>'.$item['name'].'</g:title>
-	<g:description>'.$item['description'].'</g:description>
-	<g:link>'.$item['product_url'].'</g:link>
-	<g:image_link>'.$item['image_url'].'</g:image_link>
-	<g:condition>new</g:condition>
-	<g:availability>'.$g_availability.'</g:availability>
-	<g:price>'.$item['price'].' HUF</g:price>
-	<g:shipping>
-		<g:country>HU</g:country>
-		<g:price>'.$g_delivery_cost.' HUF</g:price>
-	</g:shipping>
+		<g:id>'.$item['identifier'].'</g:id>
+		<g:title>'.$item['name'].'</g:title>
+		<g:description>'.$item['description'].'</g:description>
+		<g:link>'.$item['product_url'].'</g:link>
+		<g:image_link>'.$item['image_url'].'</g:image_link>
+		<g:condition>new</g:condition>
+		<g:availability>'.$g_availability.'</g:availability>
+		<g:price>'.$item['price'].' HUF</g:price>
+		<g:shipping>
+			<g:country>HU</g:country>
+			<g:price>'.$g_delivery_cost.' HUF</g:price>
+		</g:shipping>
 
-	<g:brand>'.$item['manufacturer'].'</g:brand>
-	<g:mpn>'.$g_mpn.'</g:mpn>
-	
-</item>
+		<g:brand>'.$item['manufacturer'].'</g:brand>
+		<g:mpn>'.$g_mpn.'</g:mpn>
+		
+	</item>
 
 ');
 
