@@ -18,39 +18,43 @@
 
 
 foreach ($csv as $item) {
-	$search['delivery_time']    = array('Rendelésre','1');
-	$replace['delivery_time']   = array('out_of_stock','in_stock');
-	$g_availability							= str_replace($search['delivery_time'], $replace['delivery_time'], $item['delivery_time']);
 
-	$search['delivery_cost']		= array('ingyen');
-	$replace['delivery_cost']   = array('0');
-	$g_delivery_cost						= str_replace($search['delivery_cost'], $replace['delivery_cost'], $item['delivery_cost']);
-	
-	$g_mpn 											= substr($item['code'], 4);
+	if (!empty($item)) :
 
-	print('
+		$search['delivery_time']    = array('Rendelésre','1');
+		$replace['delivery_time']   = array('out_of_stock','in_stock');
+		$g_availability							= str_replace($search['delivery_time'], $replace['delivery_time'], $item['delivery_time']);
 
-		<item>
-
-		<g:id>'.$item['identifier'].'</g:id>
-		<g:title>'.$item['name'].'</g:title>
-		<g:description>'.$item['description'].'</g:description>
-		<g:link>'.$item['product_url'].'</g:link>
-		<g:image_link>'.$item['image_url'].'</g:image_link>
-		<g:condition>new</g:condition>
-		<g:availability>'.$g_availability.'</g:availability>
-		<g:price>'.$item['price'].' HUF</g:price>
-		<g:shipping>
-			<g:country>HU</g:country>
-			<g:price>'.$g_delivery_cost.' HUF</g:price>
-		</g:shipping>
-
-		<g:brand>'.$item['manufacturer'].'</g:brand>
-		<g:mpn>'.$g_mpn.'</g:mpn>
+		$search['delivery_cost']		= array('ingyen');
+		$replace['delivery_cost']   = array('0');
+		$g_delivery_cost						= str_replace($search['delivery_cost'], $replace['delivery_cost'], $item['delivery_cost']);
 		
-	</item>
+		$g_mpn 											= substr($item['code'], 4);
 
-');
+		print('
+
+			<item>
+
+				<g:id>'.$item['identifier'].'</g:id>
+				<g:title>'.$item['name'].'</g:title>
+				<g:description>'.$item['description'].'</g:description>
+				<g:link>'.$item['product_url'].'</g:link>
+				<g:image_link>'.$item['image_url'].'</g:image_link>
+				<g:condition>new</g:condition>
+				<g:availability>'.$g_availability.'</g:availability>
+				<g:price>'.$item['price'].' HUF</g:price>
+				<g:shipping>
+					<g:country>HU</g:country>
+					<g:price>'.$g_delivery_cost.' HUF</g:price>
+				</g:shipping>
+
+				<g:brand>'.$item['manufacturer'].'</g:brand>
+				<g:mpn>'.$g_mpn.'</g:mpn>
+				
+			</item>
+
+		');
+	endif;
 
 }
 
