@@ -14,16 +14,17 @@
     11  => 'delivery_cost'
 */
 
-
-$rows = array_map(function($v){return str_getcsv($v, ";");}, explode("\n", $result));
-$rows = array_filter($rows);
-$header = array_shift($rows);
-$csv = array();
-foreach ($rows as $row) {
-    $csv[] = array_combine($header, $row);
-}
-unset($row);
-
+if($result):
+    $rows = array_map(function($v){return str_getcsv($v, ";");}, explode("\n", $result));
+    $rows = array_filter($rows);
+    $header = array_shift($rows);
+    $csv = array();
+    foreach ($rows as $row) {
+        $csv[] = array_combine($header, $row);
+    }
+    #unset($row);
+endif;
+#unset($result);
 #print_r($csv);
 
 ?>

@@ -23,6 +23,25 @@ endif;
 #$file = fopen($xml_file,"w"); 
 #fclose($file); 
 
+
+$xml_start = '
+
+<?xml version="1.0"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+	<channel>
+		<title>FOTOPLUS</title>
+		<link>http://www.fotoplus.hu</link>
+		<description>FOTOPLUS webáruház</description>
+
+';
+
+$xml_end = '
+
+	</channel>
+</rss>
+
+';
+
 foreach ($csv as $item) {
 
 	if (!empty($item)) :
@@ -73,15 +92,6 @@ foreach ($csv as $item) {
 unset($item);
 unset($csv);
 
-/*
-$search['delivery_time']     = array('Rendelésre','1');
-$replace['delivery_time']    = array('out_of_stock','in_stock');
-str_replace($search['delivery_time'], $replace['delivery_time'], $csv);
-
-$search['delivery_cost']     = array('ingyen');
-$replace['delivery_cost']    = array('0');
-str_replace($search['delivery_cost'], $replace['delivery_cost'], $csv);
-*/
 /*
 ?>
 <?xml version="1.0"?>
