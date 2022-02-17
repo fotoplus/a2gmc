@@ -5,7 +5,7 @@
 Az Árukereső CSV-fájlt alakítja át a Google Merchant Center számára használható XML formátumra, cseréli az egyes mezők tartalmát, és szűri a nem megfelelő karaktereket.
 
 
-##Használat
+## Használat
 
 Kézi indítás:
 ```shell
@@ -18,7 +18,7 @@ Cron
 ```
 
 
-##Működés
+## Működés
 
 ```php
 include('config.php');          // Fájlnevek, elérési utak
