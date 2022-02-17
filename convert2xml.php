@@ -45,7 +45,7 @@ foreach ($csv as $item) {
 
 	if (!empty($item)) :
 
-
+		$g_name = str_replace('&amp,','&', $item['name']);
 
 		$search['delivery_time']    = array('Rendelésre','1-2 hét','1');
 		$replace['delivery_time']   = array('out_of_stock','out_of_stock','in_stock');
@@ -62,7 +62,7 @@ foreach ($csv as $item) {
 			<item>
 
 				<g:id>'.$item['code'].'</g:id>
-				<g:title>'.$item['name'].'</g:title>
+				<g:title>'.$g_name.'</g:title>
 				<g:description>'.$item['description'].'</g:description>
 				<g:link>'.$item['product_url'].'</g:link>
 				<g:image_link>'.$item['image_url'].'</g:image_link>
