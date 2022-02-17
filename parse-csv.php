@@ -27,4 +27,7 @@ endif;
 #unset($result);
 #print_r($csv);
 
+$csv = str_replace('&amp,','&',$csv);
+
+
 ?>
