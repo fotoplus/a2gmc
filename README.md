@@ -33,7 +33,7 @@ echo $output;
 ```
 
 
----
+## Beállítás
 
 **[upload2google.py](upload2google_EXAMPLE.py)** *Minta fájl*
 
