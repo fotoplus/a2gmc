@@ -99,7 +99,9 @@ file_put_contents($xml_file, $xml_end, FILE_APPEND | LOCK_EX);
 unset($item);
 unset($csv);
 
-echo 'Termékek: '.$i . '\r\n';
+echo 'Termékek: '.$i . '
+
+';
 
 /*
 ?>
