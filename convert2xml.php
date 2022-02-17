@@ -47,6 +47,7 @@ foreach ($csv as $item) {
 
 		$g_name = str_replace('&amp,', '&', $item['name']);
 		$g_description = str_replace('&amp,', '&', $item['description']);
+		$g_brand = str_replace('&amp,', '&', $item['manufacturer']);
 
 		$g_name = str_replace(',', '', $g_name);
 		$g_description = str_replace(',', '', $g_description);
