@@ -82,7 +82,7 @@ foreach ($csv as $item) {
 					<g:price>'.$g_delivery_cost.' HUF</g:price>
 				</g:shipping>
 
-				<g:brand>'.$item['manufacturer'].'</g:brand>
+				<g:brand>'.$g_brand.'</g:brand>
 				<g:mpn>'.$g_mpn.'</g:mpn>
 				
 			</item>
