@@ -45,8 +45,8 @@ foreach ($csv as $item) {
 
 	if (!empty($item)) :
 
-		$bad	= array('&amp,','&gtn,',',');
-		$good	= array('&amp;','&gtn;','.');
+		$bad	= array('&amp,','&gt,',',');
+		$good	= array('&amp;','&gt;','.');
 
 		$g_name = str_replace($bad, $good, $item['name']);
 		$g_description = str_replace($bad, $good, $item['description']);
