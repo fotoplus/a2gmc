@@ -4,6 +4,9 @@
 
 Az Árukereső CSV-fájlt alakítja át a Google Merchant Center számára
 
+#Működés#
+
+
 
 
 ---

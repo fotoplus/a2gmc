@@ -43,7 +43,7 @@ file_put_contents($xml_file, $xml_start, FILE_APPEND | LOCK_EX);
 $i=0;
 foreach ($csv as $item) {
 
-	if (!empty($item)) :
+	if (!empty($item) and $item['price'] != 0) :
 
 		$bad	= array('&amp,','&gt,',',');
 		$good	= array('&amp;','&gt;','.');
