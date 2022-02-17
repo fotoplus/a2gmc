@@ -45,8 +45,10 @@ foreach ($csv as $item) {
 
 	if (!empty($item)) :
 
-		$search['delivery_time']    = array('Rendelésre','1');
-		$replace['delivery_time']   = array('out_of_stock','in_stock');
+
+
+		$search['delivery_time']    = array('Rendelésre','1-2 hét','1');
+		$replace['delivery_time']   = array('out_of_stock','out_of_stock','in_stock');
 		$g_availability							= str_replace($search['delivery_time'], $replace['delivery_time'], $item['delivery_time']);
 
 		$search['delivery_cost']		= array('ingyen');
