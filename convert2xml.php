@@ -55,8 +55,8 @@ foreach ($csv as $item) {
 		$g_name = str_replace(',', '', $g_name);
 		$g_description = str_replace(',', '', $g_description);
 
-		$search['delivery_time']    = array('Rendelésre','1-2 hét','1');
-		$replace['delivery_time']   = array('out_of_stock','out_of_stock','in_stock');
+		$search['delivery_time']    = array('Rendelésre','1-2 hét','3-4 hét','1');
+		$replace['delivery_time']   = array('out_of_stock','out_of_stock','out_of_stock','in_stock');
 		$g_availability							= str_replace($search['delivery_time'], $replace['delivery_time'], $item['delivery_time']);
 
 		$search['delivery_cost']		= array('ingyen');
